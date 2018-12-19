@@ -6,6 +6,15 @@ use src\Controller\Controller;
 
 use src\Utils\Paginacao\Paginate;
 
+use src\Utils\Serializer\SerializerEntity;
+
+
+use src\entity\Cliente;
+
+use src\repository\ClienteRepository;
+
+
+
 class DefaultController extends Controller{
 	
 
@@ -13,16 +22,24 @@ class DefaultController extends Controller{
 	public function indexAction(){
 
 	
+		$serializer = new SerializerEntity();
 
-	$paginate = new Paginate();
+		$clienteRepository = new ClienteRepository();
 
-	$paginate->setSize(253)->setQuantidadePorPagina(20)->setPaginaAtual(2);
+		$data = $clienteRepository->findAll();
 
-	
+		$cliente = $serializer->deserialize($data, Cliente::class,'json');
 
-	$this->render('default/index.html.twig', array(
-		'paginate' => $paginate
-	));
+		$paginate = new Paginate();
+
+		$paginate->setSize(253)->setQuantidadePorPagina(20)->setPaginaAtual(2);
+
+		//print_r($cliente); die();
+
+
+		$this->render('default/index.html.twig', array(
+			'paginate' => $paginate
+		));
 
 	}
 }

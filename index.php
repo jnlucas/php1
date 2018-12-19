@@ -10,7 +10,7 @@ $twig = new Twig_Environment($loader, array());
 
 $config = new Config($twig,$_GET);
 
-$config->connect();
+//$config->connect();
 
 
 ?>

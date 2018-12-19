@@ -2,12 +2,16 @@
 
 namespace app\config; 
 
+use app\config\Database;
 
-class Config{
+class Config extends DatabaseAbstract{
 
 	private $twig;
 	
 	protected $request;	
+	
+	protected $db;	
+
 
 
 	public function __construct($template,$request){
@@ -37,6 +41,12 @@ class Config{
 		call_user_func_array(array($controller, $view), array());
 
 		
+	}
+
+	public function connect($host,$username,$password,$dbname){
+
+		$this->db = new Database($host,$username,$password,$dbname);
+
 	}
 
 	

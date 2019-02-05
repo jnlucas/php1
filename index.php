@@ -3,14 +3,13 @@ ini_set('display_errors',1);
 
 require_once "autoload.php";
 
-use app\config\Config;
 
-$loader = new Twig_Loader_Filesystem(__DIR__.'/src/views');
-$twig = new Twig_Environment($loader, array());
+use classes\entidades\Diretor;
 
-$config = new Config($twig,$_GET);
+$diretor = new Diretor();
 
-//$config->connect();
+echo "<pre>";
+print_r($diretor->getBonificacao());
 
 
 ?>

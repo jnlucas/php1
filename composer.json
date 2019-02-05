@@ -1,7 +1,0 @@
-{
-    "require": {
-        "twig/twig": "^1.0",
-        "symfony/serializer": "^3.4",
-        "symfony/property-access": "^3.4"
-    }
-}

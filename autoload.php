@@ -12,6 +12,5 @@ function load($namespace) {
 
 spl_autoload_register(__NAMESPACE__ . '\load');
 
-require_once __DIR__.'/vendor/autoload.php';
 
 ?>

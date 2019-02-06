@@ -5,11 +5,44 @@ require_once "autoload.php";
 
 
 use classes\entidades\Diretor;
+use classes\entidades\Designer;
+use classes\SistemaInterno;
+use classes\GerenciadorBonificacao;
 
-$diretor = new Diretor();
+
+$sistemaInterno = new SistemaInterno();
+$gerenciadorBonificacao = new GerenciadorBonificacao();
+
 
 echo "<pre>";
-print_r($diretor->getBonificacao());
+
+$diretor = new Diretor('36131357870',5000);
+$diretor->nome = "Joao";
+$diretor->senha = "Palmeiras nao tem mundial";
+
+
+
+$designer = new Designer('35893942850',5000);
+$designer->nome = "Maria";
+
+
+$sistemaInterno->logar($diretor,'Palmeiras nao tem mundial');
+//$sistemaInterno->logar($designer,'abcd');
+
+
+print_r($designer);
+
+print_r($diretor);
+
+
+$gerenciadorBonificacao->registrar($diretor);
+
+
+
+echo $gerenciadorBonificacao->getTotalBonificacao();
+
+
+
 
 
 ?>

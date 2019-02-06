@@ -5,19 +5,26 @@ namespace classes\abstratas;
 abstract class Funcionario{
 
 
-	private $nome;
+	public $nome;
 	
-	private $cpf;
+	protected $cpf;
 	
-	private $email;
+	protected $salario;
 	
-	private $telefone;
 
+
+
+	public function __construct($cpf,$salario){
+
+		$this->cpf = $cpf;
+		$this->salario = $salario;
+
+	}
 
 	abstract public function getBonificacao();
 
 
-	abstract  protected function getSalario();
+	abstract  protected function AumentarSalario();
 
 }
 

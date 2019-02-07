@@ -16,13 +16,13 @@ $gerenciadorBonificacao = new GerenciadorBonificacao();
 
 echo "<pre>";
 
-$diretor = new Diretor('36131357870',5000);
+$diretor = new Diretor('36131357870',15500.00);
 $diretor->nome = "Joao";
 $diretor->senha = "Palmeiras nao tem mundial";
 
 
 
-$designer = new Designer('35893942850',5000);
+$designer = new Designer('35893942850');
 $designer->nome = "Maria";
 
 

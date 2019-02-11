@@ -6,7 +6,7 @@ function load($namespace) {
      $fullpath = __DIR__."/" . $namespace . '.php';
 
     return include_once($fullpath);
-    return true;
+    
 }
 
 spl_autoload_register(__NAMESPACE__ . '\load');
